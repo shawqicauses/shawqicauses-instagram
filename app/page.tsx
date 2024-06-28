@@ -1,12 +1,44 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
-import InstagramPost from "./_components/instagram"
+import {Fragment} from "react"
+import {Badge, Footer, Heading, Highlight, Paragraph, Post} from "./_components/instagram"
 
 const Page = async function Page() {
   return (
     <main>
-      <div className="mx-auto max-w-xl-7 py-20">
-        <InstagramPost />
+      <div className="mx-auto max-w-xl-7 space-y-10 py-20">
+        <Post id="design-01">
+          <Badge>عاشت غزة</Badge>
+          <Heading>
+            <Fragment>
+              هل تودُّ معرفة <br /> ما الذي يقوله <br /> <Highlight>عملائي</Highlight> عني 🫡؟
+            </Fragment>
+          </Heading>
+          <Footer />
+        </Post>
+        <Post id="design-01-02">
+          <Paragraph>
+            يود مجلس إدارة شركة عمق للحلول الرقمية في مملكة البحرين أن يتقدم بجزيل الشكر والتقدير
+            للأستاذ{" "}
+            <span className="bg-primary box-decoration-clone text-foreground">شوقي حاتم فارس</span>{" "}
+            على{" "}
+            <span className="bg-primary box-decoration-clone text-foreground">
+              تفانيه في العمل وإجتهاده في طرح الأفكار الإبداعيه
+            </span>{" "}
+            خلال فترة عمله على الموقع الإلكتروني الخاص بالشركة وعليه فقد تقدم بدايةً بطرح فكرةٍ
+            لإعادة تصميم الموقع بحيث يكون تصميم الموقع مواكب لآخر التحديثات الرقمية وبعد موافقة...
+          </Paragraph>
+        </Post>
+        <Post id="design-01-03">
+          <Paragraph>
+            وبعد موافقة القسم المختص على فكرة إعادة التصميم،{" "}
+            <span className="bg-primary box-decoration-clone text-foreground">
+              سُعدنا بسرعة إنجاز العمل بأسرع وقت ممكن وهذا ما كنا نطمح له
+            </span>
+            ، وكما أننا ننصح الشركات والمؤسسات بالتعامل معه، فنحن نتطلع للتعامل معه في المستقبل
+            القريب، متمنين لك دوام التوفيق والنجاح.
+          </Paragraph>
+        </Post>
       </div>
     </main>
   )
