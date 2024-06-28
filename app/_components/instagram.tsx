@@ -1,34 +1,58 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import {ArrowLeftIcon} from "lucide-react"
 import {Button} from "../../components/ui"
 
 const InstagramPost = function InstagramPost() {
   return (
-    <div className="shc-flex-center border border-foreground/10 bg-muted/10">
-      <div className="shc-flex-center h-[84.375rem] w-[67.5rem] bg-background">
-        <div className="flex h-full max-h-[50rem] max-w-[55rem] flex-col items-start justify-center">
-          <div className="inline-flex items-center gap-x-6 rounded-full bg-primary/20 px-8 py-4 text-xl-4 font-medium leading-none text-foreground ring-1 ring-inset ring-primary">
-            <svg viewBox="0 0 16 16" aria-hidden="true" className="h-4 w-4 fill-primary">
-              <circle cx={8} cy={8} r={8} />
-            </svg>
-            عاشت غزة
-          </div>
-          <h1 className="mt-16 text-[6.75rem] font-bold leading-[8.25rem] text-foreground">
-            هل تودُّ معرفة <br /> ما الذي يقوله <br />{" "}
-            <span className="relative text-primary">عملائي</span> عني 🫡؟
-          </h1>
-          <div className="mt-auto flex w-full items-center justify-between">
-            <span className="text-xl-5 font-bold">
-              شوقي
-              <span className="text-primary">.</span>
-            </span>
-            <Button variant="primary" size="icon" className="h-20 w-20 !rounded-full" asChild>
-              <span aria-hidden="true">
-                <ArrowLeftIcon strokeWidth={1.5} className="h-10 w-10" />
-              </span>
-            </Button>
-          </div>
+    <div className="shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 -top-80 -z-10 transform-gpu overflow-hidden blur-xl-3">
+        <div
+          className="relative left-[calc(50%-30rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary-light to-primary-dark opacity-30"
+          style={{
+            clipPath:
+              "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
+          }}
+        />
+      </div>
+      <div className="flex h-full max-h-[50rem] max-w-[55rem] flex-col items-start justify-center">
+        <div className="inline-flex items-center gap-x-6 rounded-full bg-primary/20 px-8 py-4 text-xl-4 font-medium leading-none text-foreground ring-1 ring-inset ring-primary">
+          <svg viewBox="0 0 16 16" aria-hidden="true" className="h-4 w-4 fill-primary">
+            <circle cx={8} cy={8} r={8} />
+          </svg>
+          عاشت غزة
         </div>
+        <h1 className="mt-16 text-[6.75rem] font-bold leading-[8.25rem] text-foreground">
+          هل تودُّ معرفة <br /> ما الذي يقوله <br />{" "}
+          <span className="relative text-foreground">
+            <div className="absolute bottom-5 left-0 right-0 z-10 h-1/2 w-full bg-primary" />
+            <span className="relative z-20">عملائي</span>
+          </span>{" "}
+          عني 🫡؟
+        </h1>
+        <div className="mt-auto flex w-full items-center justify-between">
+          <span className="text-[3.375rem] font-bold leading-none">
+            شوقي
+            <span className="text-primary">.</span>
+          </span>
+          <Button variant="primary" size="icon" className="h-20 w-20 !rounded-full" asChild>
+            <span aria-hidden="true">
+              <ArrowLeftIcon strokeWidth={1.5} className="h-10 w-10" />
+            </span>
+          </Button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-[calc(100%-30rem)] -z-10 transform-gpu overflow-hidden blur-xl-3">
+        <div
+          className="relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 bg-gradient-to-tr from-primary-light to-primary-dark opacity-30"
+          style={{
+            clipPath:
+              "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
+          }}
+        />
       </div>
     </div>
   )
