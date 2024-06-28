@@ -1,12 +1,13 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 import DomToImage from "dom-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {Fragment} from "react"
 import {Button} from "../../components/ui"
 
 const InstagramPost = function InstagramPost() {
+  const id = "instagram-design-pattern"
   const download = function download() {
     DomToImage.toPng(document.getElementById("design-01")).then((value: string) => {
       const anchorElement = document.createElement("a")
@@ -23,6 +24,22 @@ const InstagramPost = function InstagramPost() {
       <div
         id="design-01"
         className="shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background">
+        <svg
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full stroke-foreground/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]">
+          <defs>
+            <pattern id={id} width={200} height={200} x="50%" y={-1} patternUnits="userSpaceOnUse">
+              <path fill="none" d="M.5 200V.5H200" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-border/20">
+            <path
+              strokeWidth={0}
+              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+            />
+          </svg>
+          <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
+        </svg>
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-80 -z-10 transform-gpu overflow-hidden blur-xl-3">
@@ -41,7 +58,7 @@ const InstagramPost = function InstagramPost() {
             </svg>
             عاشت غزة
           </div>
-          <h1 className="mt-16 text-[6.75rem] font-bold leading-[8.25rem] text-foreground">
+          <h1 className="relative z-30 mt-16 text-[6.75rem] font-bold leading-[8.25rem] text-foreground">
             هل تودُّ معرفة <br /> ما الذي يقوله <br />{" "}
             <span className="relative text-foreground">
               <div className="absolute bottom-5 left-0 right-0 z-10 h-1/2 w-full bg-primary" />
