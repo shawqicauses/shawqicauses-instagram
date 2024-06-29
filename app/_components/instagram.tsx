@@ -1,15 +1,24 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 7️⃣
+// DONE REVIEWING: GITHUB COMMIT 8️⃣
 import DomToImage from "dom-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {Fragment, HTMLAttributes, PropsWithChildren} from "react"
 import {Button} from "../../components/ui"
 import {cn} from "../../lib/utils"
 
-export const Badge = function Badge({children}: PropsWithChildren) {
+export const Badge = function Badge({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="relative z-30 inline-flex items-center gap-x-6 rounded-full bg-primary/20 px-8 py-4 text-xl-4 font-medium leading-none text-foreground ring-1 ring-inset ring-primary">
+    <div
+      className={cn(
+        "relative z-30 inline-flex items-center gap-x-6 rounded-full bg-primary/20 px-8 py-4 !text-xl-4 font-medium !leading-none text-foreground ring-1 ring-inset ring-primary",
+        className
+      )}
+      {...props}>
       <svg viewBox="0 0 16 16" aria-hidden="true" className="h-4 w-4 fill-primary">
         <circle cx={8} cy={8} r={8} />
       </svg>
@@ -18,9 +27,12 @@ export const Badge = function Badge({children}: PropsWithChildren) {
   )
 }
 
-export const Highlight = function Highlight({children}: PropsWithChildren) {
+export const Highlight = function Highlight({
+  className,
+  children
+}: HTMLAttributes<HTMLSpanElement>) {
   return (
-    <span className="relative text-foreground">
+    <span className={cn("relative text-foreground", className)}>
       <div className="absolute left-0 right-0 top-1/2 z-10 h-1/2 w-full -translate-y-1/2 bg-primary" />
       <span className="relative z-20">{children}</span>
     </span>

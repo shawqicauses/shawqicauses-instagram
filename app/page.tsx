@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 4️⃣
+// DONE REVIEWING: GITHUB COMMIT 5️⃣
 
 import {StarIcon} from "lucide-react"
 import {Fragment} from "react"
@@ -56,6 +56,19 @@ const Page = async function Page() {
           <div className="mt-auto flex flex-col items-start justify-center gap-y-1.5">
             <div className="text-xl font-semi-bold text-foreground">م. عبيدة العنزي</div>
             <div className="text-base text-muted-foreground">مؤسس عمق للحلول الرقمية</div>
+          </div>
+        </Post>
+        <Post id="design-01-04">
+          <Heading>
+            <Highlight>لحظة..!</Highlight>
+          </Heading>
+          <Paragraph className="mt-10">
+            هل كنت تعلم أن هذا المنشور الذي تقرؤه الآن، قد قمت بتصميمه بإستخدام الـ{" "}
+            <span className="bg-primary box-decoration-clone text-foreground">React.JS</span>🤔؟
+          </Paragraph>
+          <div className="mt-auto flex w-full flex-row items-center justify-end gap-x-10">
+            <p className="text-xl-3">رابط الـ Code هنا 👈🏻</p>
+            <Badge dir="ltr">github.com/shawqicauses</Badge>
           </div>
         </Post>
       </div>
