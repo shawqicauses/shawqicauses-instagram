@@ -1,10 +1,11 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 6️⃣
+// DONE REVIEWING: GITHUB COMMIT 7️⃣
 import DomToImage from "dom-to-image"
 import {ArrowLeftIcon} from "lucide-react"
-import {Fragment, PropsWithChildren} from "react"
+import {Fragment, HTMLAttributes, PropsWithChildren} from "react"
 import {Button} from "../../components/ui"
+import {cn} from "../../lib/utils"
 
 export const Badge = function Badge({children}: PropsWithChildren) {
   return (
@@ -26,17 +27,28 @@ export const Highlight = function Highlight({children}: PropsWithChildren) {
   )
 }
 
-export const Heading = function Heading({children}: PropsWithChildren) {
-  return <h1 className="text-[6.75rem] font-bold leading-[8.25rem] text-foreground">{children}</h1>
-}
-
-export const Paragraph = function Paragraph({children}: PropsWithChildren) {
-  return <p className="text-xl-5 font-normal leading-relaxed text-foreground">{children}</p>
-}
-
-export const Footer = function Footer() {
+export const Heading = function Heading({className, children}: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <div className="mt-auto flex w-full items-center justify-between">
+    <h1 className={cn("text-[6.75rem] font-bold leading-[8.25rem] text-foreground", className)}>
+      {children}
+    </h1>
+  )
+}
+
+export const Paragraph = function Paragraph({
+  className,
+  children
+}: HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p className={cn("!text-xl-5 font-normal !leading-relaxed text-foreground", className)}>
+      {children}
+    </p>
+  )
+}
+
+export const Footer = function Footer({className}: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className={cn("flex w-full items-center justify-between", className)}>
       <span className="text-[3.375rem] font-bold leading-none">
         شوقي
         <span className="text-primary">.</span>
@@ -102,7 +114,7 @@ export const Post = function Post({id, children}: PostProps) {
             }}
           />
         </div>
-        <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start gap-y-16">
+        <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start">
           {children}
         </div>
         <div
