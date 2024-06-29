@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 5️⃣
+// DONE REVIEWING: GITHUB COMMIT 6️⃣
 
 import {StarIcon} from "lucide-react"
 import {Fragment} from "react"
@@ -32,7 +32,7 @@ const Page = async function Page() {
               تفانيه في العمل وإجتهاده في طرح الأفكار الإبداعيه
             </span>{" "}
             خلال فترة عمله على الموقع الإلكتروني الخاص بالشركة وعليه فقد تقدم بدايةً بطرح فكرةٍ
-            لإعادة تصميم الموقع بحيث يكون تصميم الموقع مواكب لآخر التحديثات الرقمية وبعد موافقة...
+            لإعادة تصميم الموقع بحيث يكون تصميم الموقع مواكب لآخر التحديثات...
           </Paragraph>
           <div className="mt-auto flex flex-col items-start justify-center gap-y-1.5">
             <div className="text-xl font-semi-bold text-foreground">م. عبيدة العنزي</div>
@@ -46,7 +46,7 @@ const Page = async function Page() {
             ))}
           </div>
           <Paragraph className="mt-10">
-            وبعد موافقة القسم المختص على فكرة إعادة التصميم،{" "}
+            الرقمية وبعد موافقة القسم المختص على فكرة إعادة التصميم،{" "}
             <span className="bg-primary box-decoration-clone text-foreground">
               سُعدنا بسرعة إنجاز العمل بأسرع وقت ممكن وهذا ما كنا نطمح له
             </span>
@@ -70,6 +70,12 @@ const Page = async function Page() {
             <p className="text-xl-3">رابط الـ Code هنا 👈🏻</p>
             <Badge dir="ltr">github.com/shawqicauses</Badge>
           </div>
+        </Post>
+        <Post id="design-01-05">
+          <Heading>
+            شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
+          </Heading>
+          <Footer isSwipe={false} className="mt-auto" />
         </Post>
       </div>
     </main>
