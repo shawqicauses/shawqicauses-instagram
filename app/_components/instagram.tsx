@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 8️⃣
+// DONE REVIEWING: GITHUB COMMIT 9️⃣
 import DomToImage from "dom-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {Fragment, HTMLAttributes, PropsWithChildren} from "react"
@@ -58,18 +58,23 @@ export const Paragraph = function Paragraph({
   )
 }
 
-export const Footer = function Footer({className}: HTMLAttributes<HTMLDivElement>) {
+export const Footer = function Footer({
+  isSwipe = true,
+  className
+}: HTMLAttributes<HTMLDivElement> & {isSwipe?: boolean}) {
   return (
     <div className={cn("flex w-full items-center justify-between", className)}>
-      <span className="text-[3.375rem] font-bold leading-none">
+      <span className="self-start text-[3.375rem] font-bold leading-none">
         شوقي
         <span className="text-primary">.</span>
       </span>
-      <Button variant="primary" size="icon" className="h-20 w-20 !rounded-full" asChild>
-        <span aria-hidden="true">
-          <ArrowLeftIcon strokeWidth={1.5} className="h-10 w-10" />
-        </span>
-      </Button>
+      {isSwipe && (
+        <Button variant="primary" size="icon" className="h-20 w-20 !rounded-full" asChild>
+          <span aria-hidden="true">
+            <ArrowLeftIcon strokeWidth={1.5} className="h-10 w-10" />
+          </span>
+        </Button>
+      )}
     </div>
   )
 }
