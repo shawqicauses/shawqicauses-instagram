@@ -1,5 +1,5 @@
 {
-  "reviewed": "true 3️⃣",
+  "reviewed": "true 4️⃣",
   "version": "1.0.0",
   "name": "shawqicauses-instagram",
   "description": "A project for my Instagram account posts/stories design. Developed by @shawqicauses.",
@@ -31,6 +31,7 @@
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
     "dom-to-image": "2.6.0",
+    "html-to-image": "1.11.11",
     "lucide-react": "0.378.0",
     "next": "14.2.3",
     "next-themes": "0.3.0",
