@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 5️⃣
+// DONE REVIEWING: GITHUB COMMIT 6️⃣
 import DomToImage from "dom-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {Fragment, PropsWithChildren} from "react"
@@ -27,9 +27,7 @@ export const Highlight = function Highlight({children}: PropsWithChildren) {
 }
 
 export const Heading = function Heading({children}: PropsWithChildren) {
-  return (
-    <h1 className="mt-16 text-[6.75rem] font-bold leading-[8.25rem] text-foreground">{children}</h1>
-  )
+  return <h1 className="text-[6.75rem] font-bold leading-[8.25rem] text-foreground">{children}</h1>
 }
 
 export const Paragraph = function Paragraph({children}: PropsWithChildren) {
@@ -104,7 +102,7 @@ export const Post = function Post({id, children}: PostProps) {
             }}
           />
         </div>
-        <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start">
+        <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start gap-y-16">
           {children}
         </div>
         <div
