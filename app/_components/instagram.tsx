@@ -1,9 +1,9 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
-import HTMLToImage from "html-to-image"
+// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
+import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
-import {Fragment, HTMLAttributes, PropsWithChildren} from "react"
+import {Fragment, HTMLAttributes, PropsWithChildren, useRef} from "react"
 import {Button} from "../../components/ui"
 import {cn} from "../../lib/utils"
 
@@ -84,8 +84,10 @@ interface PostProps extends PropsWithChildren {
 }
 
 export const Post = function Post({id, children}: PostProps) {
+  const ref = useRef<HTMLDivElement>(null)
   const download = function download() {
-    HTMLToImage.toPng(document.getElementById(id) as HTMLElement).then((value: string) => {
+    if (ref.current === null) return
+    toPng(ref.current, {cacheBust: true}).then((value: string) => {
       const anchorElement = document.createElement("a")
       anchorElement.href = value
       anchorElement.download = `${id}.png`
@@ -97,6 +99,7 @@ export const Post = function Post({id, children}: PostProps) {
     <Fragment>
       <div
         id="design-01"
+        ref={ref}
         className="shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background">
         <svg
           aria-hidden="true"
