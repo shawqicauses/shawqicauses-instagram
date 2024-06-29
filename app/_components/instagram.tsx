@@ -1,7 +1,7 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 9️⃣
-import DomToImage from "dom-to-image"
+// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
+import HTMLToImage from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {Fragment, HTMLAttributes, PropsWithChildren} from "react"
 import {Button} from "../../components/ui"
@@ -85,7 +85,7 @@ interface PostProps extends PropsWithChildren {
 
 export const Post = function Post({id, children}: PostProps) {
   const download = function download() {
-    DomToImage.toPng(document.getElementById(id) as Node).then((value: string) => {
+    HTMLToImage.toPng(document.getElementById(id) as HTMLElement).then((value: string) => {
       const anchorElement = document.createElement("a")
       anchorElement.href = value
       anchorElement.download = `${id}.png`
