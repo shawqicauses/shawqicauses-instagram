@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 6️⃣
+// DONE REVIEWING: GITHUB COMMIT 7️⃣
 
 import {StarIcon} from "lucide-react"
 import {Fragment} from "react"
@@ -7,7 +7,7 @@ import {Badge, Footer, Heading, Highlight, Paragraph, Post} from "./_components/
 const Page = async function Page() {
   return (
     <main>
-      <div className="mx-auto max-w-xl-7 space-y-10 py-20">
+      <div className="mx-auto max-w-xl-7 py-20">
         <Post id="design-01">
           <Badge>عاشت غزة</Badge>
           <Heading className="mt-16">

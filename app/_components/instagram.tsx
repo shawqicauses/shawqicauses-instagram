@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣2️⃣
 import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {Fragment, HTMLAttributes, PropsWithChildren, useRef} from "react"
@@ -84,10 +84,11 @@ interface PostProps extends PropsWithChildren {
 }
 
 export const Post = function Post({id, children}: PostProps) {
-  const ref = useRef<HTMLDivElement>(null)
-  const download = function download() {
-    if (ref.current === null) return
-    toPng(ref.current, {cacheBust: true}).then((value: string) => {
+  const targetRef = useRef<HTMLDivElement>(null)
+
+  const capture = async function capture() {
+    if (!targetRef.current) return
+    toPng(targetRef.current, {cacheBust: true}).then((value: string) => {
       const anchorElement = document.createElement("a")
       anchorElement.href = value
       anchorElement.download = `${id}.png`
@@ -99,7 +100,7 @@ export const Post = function Post({id, children}: PostProps) {
     <Fragment>
       <div
         id="design-01"
-        ref={ref}
+        ref={targetRef}
         className="shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background">
         <svg
           aria-hidden="true"
@@ -149,7 +150,9 @@ export const Post = function Post({id, children}: PostProps) {
           />
         </div>
       </div>
-      <Button onClick={() => download()}>تنزيل الصورة</Button>
+      <Button className="mb-20 mt-10" onClick={() => capture()}>
+        تنزيل الصورة
+      </Button>
     </Fragment>
   )
 }
