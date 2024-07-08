@@ -1,28 +1,35 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣2️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣3️⃣
 import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
-import {Fragment, HTMLAttributes, PropsWithChildren, useRef} from "react"
+import {createContext, Fragment, HTMLAttributes, useContext, useMemo, useRef} from "react"
 import {Button} from "../../components/ui"
 import {cn} from "../../lib/utils"
+
+type PostContextType = {color?: "primary" | "secondary"}
+const PostContext = createContext({color: "primary"} as PostContextType)
 
 export const Badge = function Badge({
   className,
   children,
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
+  const {color} = useContext(PostContext)
+  const classes = {badge: `bg-${color}/20 text-${color} ring-${color}`}
+
   return (
     <div
       className={cn(
-        "relative z-30 inline-flex items-center gap-x-6 rounded-full bg-primary/20 px-8 py-4 !text-xl-4 font-medium !leading-none text-foreground ring-1 ring-inset ring-primary",
+        "relative z-30 inline-flex items-center gap-x-6 rounded-full px-8 py-4 !text-xl-4 font-medium !leading-none ring-1 ring-inset",
+        classes.badge,
         className
       )}
       {...props}>
-      <svg viewBox="0 0 16 16" aria-hidden="true" className="h-4 w-4 fill-primary">
+      <svg viewBox="0 0 16 16" aria-hidden="true" className="h-4 w-4 fill-current">
         <circle cx={8} cy={8} r={8} />
       </svg>
-      {children}
+      <div className="text-foreground">{children}</div>
     </div>
   )
 }
@@ -31,9 +38,17 @@ export const Highlight = function Highlight({
   className,
   children
 }: HTMLAttributes<HTMLSpanElement>) {
+  const {color} = useContext(PostContext)
+  const classes = {highlight: color === "primary" ? "bg-primary" : "bg-secondary"}
+
   return (
     <span className={cn("relative text-foreground", className)}>
-      <div className="absolute left-0 right-0 top-1/2 z-10 h-1/2 w-full -translate-y-1/2 bg-primary" />
+      <div
+        className={cn(
+          "absolute left-0 right-0 top-1/2 z-10 h-1/2 w-full -translate-y-1/2",
+          classes.highlight
+        )}
+      />
       <span className="relative z-20">{children}</span>
     </span>
   )
@@ -62,14 +77,17 @@ export const Footer = function Footer({
   isSwipe = true,
   className
 }: HTMLAttributes<HTMLDivElement> & {isSwipe?: boolean}) {
+  const {color} = useContext(PostContext)
+  const classes = {footer: `text-${color}`}
+
   return (
     <div className={cn("flex w-full items-center justify-between", className)}>
       <span className="self-start text-[3.375rem] font-bold leading-none">
         شوقي
-        <span className="text-primary">.</span>
+        <span className={classes.footer}>.</span>
       </span>
       {isSwipe && (
-        <Button variant="primary" size="icon" className="h-20 w-20 !rounded-full" asChild>
+        <Button variant={color} size="icon" className="h-20 w-20 !rounded-full" asChild>
           <span aria-hidden="true">
             <ArrowLeftIcon strokeWidth={1.5} className="h-10 w-10" />
           </span>
@@ -79,12 +97,15 @@ export const Footer = function Footer({
   )
 }
 
-interface PostProps extends PropsWithChildren {
-  id: string
-}
-
-export const Post = function Post({id, children}: PostProps) {
+export const Post = function Post({
+  id,
+  className,
+  color = "primary",
+  children
+}: HTMLAttributes<HTMLDivElement> & PostContextType) {
   const targetRef = useRef<HTMLDivElement>(null)
+  const contextValue = useMemo(() => ({color}), [color])
+  const classes = {gradient: `from-${color}-light to-${color}-dark`}
 
   const capture = async function capture() {
     if (!targetRef.current) return
@@ -101,7 +122,10 @@ export const Post = function Post({id, children}: PostProps) {
       <div
         id="design-01"
         ref={targetRef}
-        className="shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background">
+        className={cn(
+          "shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background",
+          className
+        )}>
         <svg
           aria-hidden="true"
           className="absolute inset-0 h-full w-full stroke-foreground/20 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]">
@@ -128,7 +152,10 @@ export const Post = function Post({id, children}: PostProps) {
           aria-hidden="true"
           className="absolute inset-x-0 -top-80 -z-10 transform-gpu overflow-hidden blur-xl-3">
           <div
-            className="relative left-[calc(50%-30rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary-light to-primary-dark opacity-30"
+            className={cn(
+              "relative left-[calc(50%-30rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-30",
+              classes.gradient
+            )}
             style={{
               clipPath:
                 "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
@@ -136,13 +163,16 @@ export const Post = function Post({id, children}: PostProps) {
           />
         </div>
         <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start">
-          {children}
+          <PostContext.Provider value={contextValue}>{children}</PostContext.Provider>
         </div>
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-[calc(100%-30rem)] -z-10 transform-gpu overflow-hidden blur-xl-3">
           <div
-            className="relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 bg-gradient-to-tr from-primary-light to-primary-dark opacity-30"
+            className={cn(
+              "relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 bg-gradient-to-tr opacity-30",
+              classes.gradient
+            )}
             style={{
               clipPath:
                 "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
@@ -150,7 +180,7 @@ export const Post = function Post({id, children}: PostProps) {
           />
         </div>
       </div>
-      <Button className="mb-20 mt-10" onClick={() => capture()}>
+      <Button variant={color} className="mb-20 mt-10" onClick={() => capture()}>
         تنزيل الصورة
       </Button>
     </Fragment>

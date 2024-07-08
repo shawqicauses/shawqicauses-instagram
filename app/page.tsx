@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 7️⃣
+// DONE REVIEWING: GITHUB COMMIT 8️⃣
 
 import {StarIcon} from "lucide-react"
 import {Fragment} from "react"
@@ -7,7 +7,7 @@ import {Badge, Footer, Heading, Highlight, Paragraph, Post} from "./_components/
 const Page = async function Page() {
   return (
     <main>
-      <div className="mx-auto max-w-xl-7 py-20">
+      <div className="mx-auto flex max-w-xl-7 flex-col-reverse items-start py-20">
         <Post id="design-01">
           <Badge>عاشت غزة</Badge>
           <Heading className="mt-16">
@@ -74,6 +74,45 @@ const Page = async function Page() {
         <Post id="design-01-05">
           <Heading>
             شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
+          </Heading>
+          <Footer isSwipe={false} className="mt-auto" />
+        </Post>
+        <Post id="design-avatar" className="h-[67.5rem]">
+          <Heading className="m-auto text-[20rem]">
+            شَوْقِيْ<span className="text-primary">.</span>
+          </Heading>
+        </Post>
+        <Post id="design-02" color="secondary">
+          <Badge>عاشت غزة</Badge>
+          <Heading className="mt-16">
+            <Fragment>
+              <Highlight>برمِج</Highlight> مع <br /> شوقي في بث <br /> مباشر 🎙️!
+            </Fragment>
+          </Heading>
+          <Footer className="mt-auto" />
+        </Post>
+        <Post id="design-02-02" color="secondary">
+          <Heading>
+            <Highlight>على قناة التلغرام..!</Highlight>
+          </Heading>
+          <Paragraph className="mt-10">
+            حالياً نقوم ببناء تطبيق ويب (SaaS Application) خاص بالمساجد وزائريها، قمنا بالفعل بإنجاز
+            نسبة كبيرة من التطبيق في البثوث السابقة، لذا إنضم إلينا الآن لرؤية النتيجة النهائية
+            للتطبيق.
+          </Paragraph>
+          <div className="mt-auto flex w-full flex-row items-center justify-end gap-x-10">
+            <p className="text-xl-3">رابط القناة بالـ Bio 👈🏻</p>
+            <Badge dir="ltr">t.me/shawqicausesweb</Badge>
+          </div>
+        </Post>
+        <Post id="design-02-03" color="secondary">
+          <Heading className="m-auto">
+            <Highlight>الساعة الخامسة بتوقيت غزة.</Highlight>
+          </Heading>
+        </Post>
+        <Post id="design-02-04" color="secondary">
+          <Heading>
+            ألقاكم في البث، <br /> لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
           </Heading>
           <Footer isSwipe={false} className="mt-auto" />
         </Post>
