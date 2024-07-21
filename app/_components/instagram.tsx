@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣3️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣4️⃣
 import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {createContext, Fragment, HTMLAttributes, useContext, useMemo, useRef} from "react"
@@ -16,7 +16,12 @@ export const Badge = function Badge({
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
   const {color} = useContext(PostContext)
-  const classes = {badge: `bg-${color}/20 text-${color} ring-${color}`}
+  const classes = {
+    badge:
+      color === "primary"
+        ? `bg-primary/20 text-primary ring-primary`
+        : `bg-secondary/20 text-secondary ring-secondary`
+  }
 
   return (
     <div
@@ -78,7 +83,7 @@ export const Footer = function Footer({
   className
 }: HTMLAttributes<HTMLDivElement> & {isSwipe?: boolean}) {
   const {color} = useContext(PostContext)
-  const classes = {footer: `text-${color}`}
+  const classes = {footer: color === "primary" ? "text-primary" : `text-secondary`}
 
   return (
     <div className={cn("flex w-full items-center justify-between", className)}>
@@ -105,7 +110,12 @@ export const Post = function Post({
 }: HTMLAttributes<HTMLDivElement> & PostContextType) {
   const targetRef = useRef<HTMLDivElement>(null)
   const contextValue = useMemo(() => ({color}), [color])
-  const classes = {gradient: `from-${color}-light to-${color}-dark`}
+  const classes = {
+    gradient:
+      color === "primary"
+        ? `from-primary-light to-primary-dark`
+        : `from-secondary-light to-secondary-dark`
+  }
 
   const capture = async function capture() {
     if (!targetRef.current) return
