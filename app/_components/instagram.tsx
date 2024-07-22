@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣5️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣6️⃣
 import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {
@@ -195,7 +195,7 @@ export const Post = function Post({
             />
           </div>
         )}
-        <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start">
+        <div className="z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start">
           <PostContext.Provider value={contextValue}>{children}</PostContext.Provider>
         </div>
         {isBlurEffect && (

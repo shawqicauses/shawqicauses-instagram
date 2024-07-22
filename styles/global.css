@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -231,6 +231,15 @@
 
   .shc-button-icon {
     @apply h-8 w-8;
+  }
+
+  /* Projects */
+  .desktop-screen-shot-wrapper {
+    @apply !w-[40rem] overflow-hidden rounded-md border-2 border-green-500/25;
+  }
+
+  .mobile-screen-shot-wrapper {
+    @apply !w-[20rem] transform overflow-hidden rounded-xl-2 border-2 border-green-500/25 bg-background p-1 shadow-xl shadow-background;
   }
 }
 

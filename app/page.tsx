@@ -1,8 +1,9 @@
-// DONE REVIEWING: GITHUB COMMIT 9️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
 
 import {StarIcon} from "lucide-react"
 import Image from "next/image"
 import {Fragment} from "react"
+import {cn} from "../lib/utils"
 import {Badge, Footer, Heading, Highlight, Paragraph, Post} from "./_components/instagram"
 
 const Page = async function Page() {
@@ -137,6 +138,76 @@ const Page = async function Page() {
             </Fragment>
           </Heading>
           <Footer className="mt-auto" />
+        </Post>
+        <Post id="design-03-02" color="green">
+          <div className="absolute bottom-0 left-1/2 top-0 flex -translate-x-1/2 -rotate-12 transform flex-col items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-3">
+              {[12, 10, 14].map((image) => (
+                <div key={image} className="desktop-screen-shot-wrapper">
+                  <Image
+                    src={`/assets/rouhalmasjid/${image}.png`}
+                    alt={image.toString()}
+                    fill
+                    className="!static z-20 !h-auto"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              {[8, 1, 13].map((image) => (
+                <div key={image} className="desktop-screen-shot-wrapper">
+                  <Image
+                    src={`/assets/rouhalmasjid/${image}.png`}
+                    alt={image.toString()}
+                    fill
+                    className="!static z-20 !h-auto"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              {[11, 4, 6].map((image) => (
+                <div key={image} className="desktop-screen-shot-wrapper">
+                  <Image
+                    src={`/assets/rouhalmasjid/${image}.png`}
+                    alt={image.toString()}
+                    fill
+                    className="!static z-20 !h-auto"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <Footer
+            className="absolute bottom-20 left-1/2 w-max -translate-x-1/2 transform"
+            isSwipe={false}
+          />
+        </Post>
+        <Post id="design-03-03" color="green">
+          <div className="absolute bottom-0 left-1/2 top-0 flex -translate-x-1/2 transform flex-col items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-3">
+              {[18, 15, 19].map((image) => (
+                <div
+                  key={image}
+                  className={cn(
+                    "mobile-screen-shot-wrapper",
+                    image === 18 && "translate-y-20",
+                    image === 19 && "-translate-y-20"
+                  )}>
+                  <Image
+                    src={`/assets/rouhalmasjid/${image}.png`}
+                    alt={image.toString()}
+                    fill
+                    className="!static z-20 !h-auto rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <Footer
+            className="absolute bottom-20 left-1/2 w-max -translate-x-1/2 transform"
+            isSwipe={false}
+          />
         </Post>
       </div>
     </main>
