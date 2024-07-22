@@ -1,6 +1,7 @@
-// DONE REVIEWING: GITHUB COMMIT 8️⃣
+// DONE REVIEWING: GITHUB COMMIT 9️⃣
 
 import {StarIcon} from "lucide-react"
+import Image from "next/image"
 import {Fragment} from "react"
 import {Badge, Footer, Heading, Highlight, Paragraph, Post} from "./_components/instagram"
 
@@ -115,6 +116,27 @@ const Page = async function Page() {
             ألقاكم في البث، <br /> لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
           </Heading>
           <Footer isSwipe={false} className="mt-auto" />
+        </Post>
+        <Post
+          id="design-03"
+          color="green"
+          isBlurEffect={false}
+          img={
+            <Image
+              src="/assets/rouhalmasjid/1.png"
+              alt="1"
+              fill
+              className="!absolute !-bottom-10 !-left-20 !right-[initial] !top-[initial] z-20 !h-auto max-w-xl-4 rounded-md opacity-75 ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+            />
+          }>
+          <Badge>عاشت غزة</Badge>
+          <Heading className="mt-16">
+            <Fragment>
+              أحد أكثر <br />
+              المشاريع التي <br /> <Highlight>تعلمت</Highlight> منها 📗.
+            </Fragment>
+          </Heading>
+          <Footer className="mt-auto" />
         </Post>
       </div>
     </main>

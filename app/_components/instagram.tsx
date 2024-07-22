@@ -1,13 +1,21 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣4️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣5️⃣
 import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
-import {createContext, Fragment, HTMLAttributes, useContext, useMemo, useRef} from "react"
+import {
+  createContext,
+  Fragment,
+  HTMLAttributes,
+  ReactNode,
+  useContext,
+  useMemo,
+  useRef
+} from "react"
 import {Button} from "../../components/ui"
 import {cn} from "../../lib/utils"
 
-type PostContextType = {color?: "primary" | "secondary"}
+type PostContextType = {color?: "primary" | "secondary" | "green"}
 const PostContext = createContext({color: "primary"} as PostContextType)
 
 export const Badge = function Badge({
@@ -20,7 +28,9 @@ export const Badge = function Badge({
     badge:
       color === "primary"
         ? `bg-primary/20 text-primary ring-primary`
-        : `bg-secondary/20 text-secondary ring-secondary`
+        : color === "green"
+          ? `bg-green-500/20 text-green-500 ring-green-500`
+          : `bg-secondary/20 text-secondary ring-secondary`
   }
 
   return (
@@ -44,7 +54,10 @@ export const Highlight = function Highlight({
   children
 }: HTMLAttributes<HTMLSpanElement>) {
   const {color} = useContext(PostContext)
-  const classes = {highlight: color === "primary" ? "bg-primary" : "bg-secondary"}
+  const classes = {
+    highlight:
+      color === "primary" ? "bg-primary" : color === "green" ? "bg-green-500" : "bg-secondary"
+  }
 
   return (
     <span className={cn("relative text-foreground", className)}>
@@ -83,7 +96,10 @@ export const Footer = function Footer({
   className
 }: HTMLAttributes<HTMLDivElement> & {isSwipe?: boolean}) {
   const {color} = useContext(PostContext)
-  const classes = {footer: color === "primary" ? "text-primary" : `text-secondary`}
+  const classes = {
+    footer:
+      color === "primary" ? "text-primary" : color === "green" ? "text-green-500" : `text-secondary`
+  }
 
   return (
     <div className={cn("flex w-full items-center justify-between", className)}>
@@ -106,15 +122,19 @@ export const Post = function Post({
   id,
   className,
   color = "primary",
+  isBlurEffect = true,
+  img,
   children
-}: HTMLAttributes<HTMLDivElement> & PostContextType) {
+}: HTMLAttributes<HTMLDivElement> & PostContextType & {isBlurEffect?: boolean; img?: ReactNode}) {
   const targetRef = useRef<HTMLDivElement>(null)
   const contextValue = useMemo(() => ({color}), [color])
   const classes = {
     gradient:
       color === "primary"
         ? `from-primary-light to-primary-dark`
-        : `from-secondary-light to-secondary-dark`
+        : color === "green"
+          ? `from-green-400 to-green-600`
+          : `from-secondary-light to-secondary-dark`
   }
 
   const capture = async function capture() {
@@ -136,6 +156,7 @@ export const Post = function Post({
           "shc-flex-center relative isolate h-[84.375rem] w-[67.5rem] overflow-hidden bg-background",
           className
         )}>
+        {img}
         <svg
           aria-hidden="true"
           className="absolute inset-0 h-full w-full stroke-foreground/20 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]">
@@ -158,37 +179,41 @@ export const Post = function Post({
           </svg>
           <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id}-pattern)`} />
         </svg>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-80 -z-10 transform-gpu overflow-hidden blur-xl-3">
+        {isBlurEffect && (
           <div
-            className={cn(
-              "relative left-[calc(50%-30rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-30",
-              classes.gradient
-            )}
-            style={{
-              clipPath:
-                "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
-            }}
-          />
-        </div>
+            aria-hidden="true"
+            className="absolute inset-x-0 -top-80 -z-10 transform-gpu overflow-hidden blur-xl-3">
+            <div
+              className={cn(
+                "relative left-[calc(50%-30rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-30",
+                classes.gradient
+              )}
+              style={{
+                clipPath:
+                  "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
+              }}
+            />
+          </div>
+        )}
         <div className="relative z-30 flex h-full max-h-[50rem] w-full max-w-[55rem] flex-col items-start justify-start">
           <PostContext.Provider value={contextValue}>{children}</PostContext.Provider>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[calc(100%-30rem)] -z-10 transform-gpu overflow-hidden blur-xl-3">
+        {isBlurEffect && (
           <div
-            className={cn(
-              "relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 bg-gradient-to-tr opacity-30",
-              classes.gradient
-            )}
-            style={{
-              clipPath:
-                "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
-            }}
-          />
-        </div>
+            aria-hidden="true"
+            className="absolute inset-x-0 top-[calc(100%-30rem)] -z-10 transform-gpu overflow-hidden blur-xl-3">
+            <div
+              className={cn(
+                "relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] -translate-x-1/2 bg-gradient-to-tr opacity-30",
+                classes.gradient
+              )}
+              style={{
+                clipPath:
+                  "polygon(74% 44%, 100% 61%, 97% 26%, 85% 0%, 80% 2%, 72% 32%, 60% 62%, 52% 68%, 47% 58%, 45% 34%, 27% 76%, 0% 64%, 17% 100%, 27% 76%, 76% 97%, 74% 44%)"
+              }}
+            />
+          </div>
+        )}
       </div>
       <Button variant={color} className="mb-20 mt-10" onClick={() => capture()}>
         تنزيل الصورة

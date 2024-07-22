@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT */
+/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -195,6 +195,10 @@
 
   .shc-button-primary {
     @apply bg-primary ring-primary hover:bg-primary-dark hover:ring-primary-dark;
+  }
+
+  .shc-button-green {
+    @apply bg-green-500 ring-green-500 hover:bg-green-600 hover:ring-green-600;
   }
 
   .shc-button-secondary {
