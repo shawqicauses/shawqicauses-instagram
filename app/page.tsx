@@ -1,21 +1,26 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣2️⃣
 
-import Image from "next/image"
 import {Fragment} from "react"
 import {cn} from "../lib/utils"
 import {Badge, Footer, Heading, Highlight, Paragraph, Post} from "./_components/instagram"
+
+/* eslint @next/next/no-img-element: "off" */
 
 const Page = async function Page() {
   return (
     <main>
       <div className="mx-auto flex max-w-xl-7 flex-col-reverse items-start py-20">
-        <Post id="design-03" color="green" isBlurEffect={false}>
-          <Image
-            src="/assets/rouhalmasjid/1.png"
-            alt="1"
-            fill
-            className="!absolute !-bottom-10 !-left-20 !right-[initial] !top-[initial] z-20 aspect-[1920/1080] !h-auto !w-[56rem] rounded-md opacity-75 ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
-          />
+        <Post
+          id="design-03"
+          color="green"
+          isBlurEffect={false}
+          img={
+            <img
+              src="/assets/rouhalmasjid/1.png"
+              alt="1"
+              className="absolute -bottom-10 -left-20 right-[initial] top-[initial] z-20 aspect-[1920/1080] w-[56rem] rounded-md opacity-75 ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+            />
+          }>
           <Badge>عاشت غزة</Badge>
           <Heading className="mt-16">
             <Fragment>
@@ -30,11 +35,10 @@ const Page = async function Page() {
             <div className="flex items-center justify-center gap-3">
               {[12, 10, 14].map((image) => (
                 <div key={image} className="desktop-screen-shot-wrapper">
-                  <Image
+                  <img
                     src={`/assets/rouhalmasjid/${image}.png`}
                     alt={image.toString()}
-                    fill
-                    className="!static z-20 !h-auto"
+                    className="z-20 rounded-xl"
                   />
                 </div>
               ))}
@@ -42,11 +46,10 @@ const Page = async function Page() {
             <div className="flex items-center justify-center gap-3">
               {[8, 1, 13].map((image) => (
                 <div key={image} className="desktop-screen-shot-wrapper">
-                  <Image
+                  <img
                     src={`/assets/rouhalmasjid/${image}.png`}
                     alt={image.toString()}
-                    fill
-                    className="!static z-20 !h-auto"
+                    className="z-20 rounded-xl"
                   />
                 </div>
               ))}
@@ -54,11 +57,10 @@ const Page = async function Page() {
             <div className="flex items-center justify-center gap-3">
               {[11, 4, 6].map((image) => (
                 <div key={image} className="desktop-screen-shot-wrapper">
-                  <Image
+                  <img
                     src={`/assets/rouhalmasjid/${image}.png`}
                     alt={image.toString()}
-                    fill
-                    className="!static z-20 !h-auto"
+                    className="z-20 rounded-xl"
                   />
                 </div>
               ))}
@@ -80,11 +82,10 @@ const Page = async function Page() {
                     image === 18 && "translate-y-20",
                     image === 19 && "-translate-y-20"
                   )}>
-                  <Image
+                  <img
                     src={`/assets/rouhalmasjid/${image}.png`}
                     alt={image.toString()}
-                    fill
-                    className="!static z-20 !h-auto rounded-xl"
+                    className="z-20 rounded-xl"
                   />
                 </div>
               ))}
@@ -105,13 +106,16 @@ const Page = async function Page() {
             إني ما تعلمت كثير أشياء، فيلا نشوف إيش تعلم شوقي.
           </Paragraph>
         </Post>
-        <Post id="design-03-05" color="green">
-          <Image
-            src="/assets/rouhalmasjid/4.png"
-            alt="4"
-            fill
-            className="!absolute !-bottom-10 !-left-20 !right-[initial] !top-[initial] z-20 aspect-[1920/1080] !h-auto !w-[56rem] rounded-md ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
-          />
+        <Post
+          id="design-03-05"
+          color="green"
+          img={
+            <img
+              src="/assets/rouhalmasjid/4.png"
+              alt="4"
+              className="absolute -bottom-10 -left-20 right-[initial] top-[initial] z-20 aspect-[1920/1080] w-[56rem] rounded-md ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+            />
+          }>
           <Heading>
             <Highlight>مكتبة Clerk.</Highlight>
           </Heading>
@@ -121,13 +125,16 @@ const Page = async function Page() {
             كثير مثل Sign-in و User account وغيرها.
           </Paragraph>
         </Post>
-        <Post id="design-03-06" color="green">
-          <Image
-            src="/assets/rouhalmasjid/5.png"
-            alt="5"
-            fill
-            className="!absolute !-left-20 !-top-10 !bottom-[initial] !right-[initial] z-20 aspect-[1920/1080] !h-auto !w-[56rem] rounded-md ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
-          />
+        <Post
+          id="design-03-06"
+          color="green"
+          img={
+            <img
+              src="/assets/rouhalmasjid/5.png"
+              alt="5"
+              className="absolute -left-20 -top-10 bottom-[initial] right-[initial] z-20 aspect-[1920/1080] w-[56rem] rounded-md ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+            />
+          }>
           <Heading className="relative z-30">
             <Highlight>أساسيات الـ</Highlight>
             <br />
