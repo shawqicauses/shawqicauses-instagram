@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣6️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣7️⃣
 import {toPng} from "html-to-image"
 import {ArrowLeftIcon} from "lucide-react"
 import {
@@ -102,7 +102,7 @@ export const Footer = function Footer({
   }
 
   return (
-    <div className={cn("flex w-full items-center justify-between", className)}>
+    <div className={cn("z-30 flex w-full items-center justify-between", className)}>
       <span className="self-start text-[3.375rem] font-bold leading-none">
         شوقي
         <span className={classes.footer}>.</span>

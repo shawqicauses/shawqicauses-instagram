@@ -1,6 +1,5 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
 
-import {StarIcon} from "lucide-react"
 import Image from "next/image"
 import {Fragment} from "react"
 import {cn} from "../lib/utils"
@@ -10,126 +9,13 @@ const Page = async function Page() {
   return (
     <main>
       <div className="mx-auto flex max-w-xl-7 flex-col-reverse items-start py-20">
-        <Post id="design-01">
-          <Badge>عاشت غزة</Badge>
-          <Heading className="mt-16">
-            <Fragment>
-              هل تودُّ معرفة <br /> ما الذي يقوله <br /> <Highlight>عملائي</Highlight> عني 🫡؟
-            </Fragment>
-          </Heading>
-          <Footer className="mt-auto" />
-        </Post>
-        <Post id="design-01-02">
-          <div className="flex gap-x-1.5 text-primary">
-            {[0, 1, 2, 3, 4].map((element) => (
-              <StarIcon key={element} aria-hidden="true" className="h-8 w-8 fill-current" />
-            ))}
-          </div>
-          <Paragraph className="mt-10">
-            يود مجلس إدارة شركة عمق للحلول الرقمية في مملكة البحرين أن يتقدم بجزيل الشكر والتقدير
-            للأستاذ{" "}
-            <span className="bg-primary box-decoration-clone text-foreground">شوقي حاتم فارس</span>{" "}
-            على{" "}
-            <span className="bg-primary box-decoration-clone text-foreground">
-              تفانيه في العمل وإجتهاده في طرح الأفكار الإبداعيه
-            </span>{" "}
-            خلال فترة عمله على الموقع الإلكتروني الخاص بالشركة وعليه فقد تقدم بدايةً بطرح فكرةٍ
-            لإعادة تصميم الموقع بحيث يكون تصميم الموقع مواكب لآخر التحديثات...
-          </Paragraph>
-          <div className="mt-auto flex flex-col items-start justify-center gap-y-1.5">
-            <div className="text-xl font-semi-bold text-foreground">م. عبيدة العنزي</div>
-            <div className="text-base text-muted-foreground">مؤسس عمق للحلول الرقمية</div>
-          </div>
-        </Post>
-        <Post id="design-01-03">
-          <div className="flex gap-x-1.5 text-primary">
-            {[0, 1, 2, 3, 4].map((element) => (
-              <StarIcon key={element} aria-hidden="true" className="h-8 w-8 fill-current" />
-            ))}
-          </div>
-          <Paragraph className="mt-10">
-            الرقمية وبعد موافقة القسم المختص على فكرة إعادة التصميم،{" "}
-            <span className="bg-primary box-decoration-clone text-foreground">
-              سُعدنا بسرعة إنجاز العمل بأسرع وقت ممكن وهذا ما كنا نطمح له
-            </span>
-            ، وكما أننا ننصح الشركات والمؤسسات بالتعامل معه، فنحن نتطلع للتعامل معه في المستقبل
-            القريب، متمنين لك دوام التوفيق والنجاح.
-          </Paragraph>
-          <div className="mt-auto flex flex-col items-start justify-center gap-y-1.5">
-            <div className="text-xl font-semi-bold text-foreground">م. عبيدة العنزي</div>
-            <div className="text-base text-muted-foreground">مؤسس عمق للحلول الرقمية</div>
-          </div>
-        </Post>
-        <Post id="design-01-04">
-          <Heading>
-            <Highlight>لحظة..!</Highlight>
-          </Heading>
-          <Paragraph className="mt-10">
-            هل كنت تعلم أن هذا المنشور الذي تقرؤه الآن، قد قمت بتصميمه بإستخدام الـ{" "}
-            <span className="bg-primary box-decoration-clone text-foreground">React.JS</span>🤔؟
-          </Paragraph>
-          <div className="mt-auto flex w-full flex-row items-center justify-end gap-x-10">
-            <p className="text-xl-3">رابط الـ Code هنا 👈🏻</p>
-            <Badge dir="ltr">github.com/shawqicauses</Badge>
-          </div>
-        </Post>
-        <Post id="design-01-05">
-          <Heading>
-            شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
-          </Heading>
-          <Footer isSwipe={false} className="mt-auto" />
-        </Post>
-        <Post id="design-avatar" className="h-[67.5rem]">
-          <Heading className="m-auto text-[20rem]">
-            شَوْقِيْ<span className="text-primary">.</span>
-          </Heading>
-        </Post>
-        <Post id="design-02" color="secondary">
-          <Badge>عاشت غزة</Badge>
-          <Heading className="mt-16">
-            <Fragment>
-              <Highlight>برمِج</Highlight> مع <br /> شوقي في بث <br /> مباشر 🎙️!
-            </Fragment>
-          </Heading>
-          <Footer className="mt-auto" />
-        </Post>
-        <Post id="design-02-02" color="secondary">
-          <Heading>
-            <Highlight>على قناة التلغرام..!</Highlight>
-          </Heading>
-          <Paragraph className="mt-10">
-            حالياً نقوم ببناء تطبيق ويب (SaaS Application) خاص بالمساجد وزائريها، قمنا بالفعل بإنجاز
-            نسبة كبيرة من التطبيق في البثوث السابقة، لذا إنضم إلينا الآن لرؤية النتيجة النهائية
-            للتطبيق.
-          </Paragraph>
-          <div className="mt-auto flex w-full flex-row items-center justify-end gap-x-10">
-            <p className="text-xl-3">رابط القناة بالـ Bio 👈🏻</p>
-            <Badge dir="ltr">t.me/shawqicausesweb</Badge>
-          </div>
-        </Post>
-        <Post id="design-02-03" color="secondary">
-          <Heading className="m-auto">
-            <Highlight>الساعة الخامسة بتوقيت غزة.</Highlight>
-          </Heading>
-        </Post>
-        <Post id="design-02-04" color="secondary">
-          <Heading>
-            ألقاكم في البث، <br /> لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
-          </Heading>
-          <Footer isSwipe={false} className="mt-auto" />
-        </Post>
-        <Post
-          id="design-03"
-          color="green"
-          isBlurEffect={false}
-          img={
-            <Image
-              src="/assets/rouhalmasjid/1.png"
-              alt="1"
-              fill
-              className="!absolute !-bottom-10 !-left-20 !right-[initial] !top-[initial] z-20 !h-auto max-w-xl-4 rounded-md opacity-75 ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
-            />
-          }>
+        <Post id="design-03" color="green" isBlurEffect={false}>
+          <Image
+            src="/assets/rouhalmasjid/1.png"
+            alt="1"
+            fill
+            className="!absolute !-bottom-10 !-left-20 !right-[initial] !top-[initial] z-20 aspect-[1920/1080] !h-auto !w-[56rem] rounded-md opacity-75 ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+          />
           <Badge>عاشت غزة</Badge>
           <Heading className="mt-16">
             <Fragment>
@@ -208,6 +94,88 @@ const Page = async function Page() {
             className="absolute bottom-20 left-1/2 w-max -translate-x-1/2 transform"
             isSwipe={false}
           />
+        </Post>
+        <Post id="design-03-04" color="green">
+          <Heading>
+            <Highlight>ماذا تعلمت؟</Highlight>
+          </Heading>
+          <Paragraph className="mt-10">
+            فعلياً المشروع ما إنتهى، وإلي أنجزته منه لحد الآن هو مجرد المرحلة الأولى وإلي عبارة عن
+            بناء نسخة مصغرة بالـ Features الأساسية فقط (MVP) حسب طلب العميل، ولكن هالشيء مش معناه
+            إني ما تعلمت كثير أشياء، فيلا نشوف إيش تعلم شوقي.
+          </Paragraph>
+        </Post>
+        <Post id="design-03-05" color="green">
+          <Image
+            src="/assets/rouhalmasjid/4.png"
+            alt="4"
+            fill
+            className="!absolute !-bottom-10 !-left-20 !right-[initial] !top-[initial] z-20 aspect-[1920/1080] !h-auto !w-[56rem] rounded-md ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+          />
+          <Heading>
+            <Highlight>مكتبة Clerk.</Highlight>
+          </Heading>
+          <Paragraph className="mt-10">
+            مكتبة Clerk هي عبارة عن Third-Party Package لتغطية جزئية الـ Authentication والـ
+            Authorization، بالإضافة لمميزات بتساعدك في إدارة المستخدمين. هالمكتبة بتقدم Components
+            كثير مثل Sign-in و User account وغيرها.
+          </Paragraph>
+        </Post>
+        <Post id="design-03-06" color="green">
+          <Image
+            src="/assets/rouhalmasjid/5.png"
+            alt="5"
+            fill
+            className="!absolute !-left-20 !-top-10 !bottom-[initial] !right-[initial] z-20 aspect-[1920/1080] !h-auto !w-[56rem] rounded-md ring-2 ring-green-500/50 ring-offset-4 ring-offset-background"
+          />
+          <Heading className="relative z-30">
+            <Highlight>أساسيات الـ</Highlight>
+            <br />
+            Back-End.
+          </Heading>
+          <Paragraph className="mt-10">
+            في هالمشروع، ولأول مرة في مسيرتي المهنية، أشتغل جزئية الـ Back-End بنفسي. إستخدمت MySQL
+            كقاعدة بيانات، و Prisma كـ ORM. أما في الـ Server-Side فإستخدمت Server
+            Components/Actions إلي إنضافت مؤخراً في الـ React.JS/Next.JS والتجربة كانت ممتعة كثير.
+          </Paragraph>
+        </Post>
+        <Post id="design-03-07" color="green">
+          <Heading>
+            <Highlight>أساسيات الـ</Highlight>
+            <br />
+            Deployment.
+          </Heading>
+          <Paragraph className="mt-10">
+            لمن خلصت الـ MVP صار دور إني أعرضه على العميل إلي وكلني في كل المهام الخاصة بهالمشروع،
+            فإضطريت إني أحجز الـ Domain والإستضافة بنفسي، والجزئية الأصعب كانت تجهيز الـ VPS لأقدر
+            أشغل Node Application عليه. وبعدها ربط الـ Domain بالـ VPS وأعمل SSL Installation، وما
+            إلى آخره.
+          </Paragraph>
+        </Post>
+        <Post id="design-03-08" color="green">
+          <Heading>
+            <Highlight>تجربة ممتعة، صح؟</Highlight>
+          </Heading>
+          <Paragraph className="mt-10">
+            صح إنه مجرد MVP والمرحلة الأولى من المشروع فقط ولكن الأشياء إلي تعلمتها من هالمشروع كانت
+            كفيلة إنها تكسبني الثقة لأستلم مشاريع ثانية، حتى لو ما عندي المعرفة والخبرة الكافية في
+            الأشياء المطلوب تنفيذها في المشروع، وهنا متعة العمل الحر.
+          </Paragraph>
+        </Post>
+        <Post id="design-03-09" color="green">
+          <Heading>
+            <Highlight>بستحق النشر؟</Highlight>
+          </Heading>
+          <Paragraph className="mt-10">
+            إذا كنت بتشوف هالتجربة بتستحق النشر، فأنشرها عندك على الـ Story وما تنسى إنه هالمشروع
+            أكثر من نصفه كنت بأشتغل عليه في بثوث مباشرة، على قناتي التلغرام، الرابط في الـ Bio.
+          </Paragraph>
+        </Post>
+        <Post id="design-03-10" color="green">
+          <Heading>
+            شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
+          </Heading>
+          <Footer isSwipe={false} className="mt-auto" />
         </Post>
       </div>
     </main>
