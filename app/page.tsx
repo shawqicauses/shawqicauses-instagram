@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣2️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣3️⃣
 
 import {Fragment} from "react"
 import {cn} from "../lib/utils"
@@ -179,6 +179,78 @@ const Page = async function Page() {
           </Paragraph>
         </Post>
         <Post id="design-03-10" color="green">
+          <Heading>
+            شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
+          </Heading>
+          <Footer isSwipe={false} className="mt-auto" />
+        </Post>
+        <Post id="design-04">
+          <Badge>عاشت غزة</Badge>
+          <Heading className="mt-16">
+            <Fragment>
+              مهمــــــــا <br /> <Highlight>تقصــــــــــــــــف</Highlight>
+              <br /> البيــــــــــــــــــــــــوت
+            </Fragment>
+          </Heading>
+          <Footer className="mt-auto" />
+        </Post>
+        <Post id="design-04-02">
+          <Heading className="mt-16">
+            <Fragment>
+              غزتنــــــــا ما
+              <br /> <Highlight>بتمــــــــــــــــوت</Highlight>
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-03">
+          <Heading className="mt-16">
+            <Fragment>
+              شعبنــــــــا عمره
+              <br /> مــــا <Highlight>يســــــــــــــــاوم</Highlight>
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-03">
+          <Heading className="mt-16">
+            <Fragment>
+              قلناهــــا بأعلى
+              <br /> <Highlight>صــــــــــــــــــــــــوت</Highlight>
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-04">
+          <Heading className="mt-16">
+            <Fragment>
+              هــــــــدم
+              <br /> المنازل <Highlight>عــــــــــــــــار</Highlight>
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-05">
+          <Heading className="mt-16">
+            <Fragment>
+              يــــا مجرم
+              <br /> يا <Highlight>غــــــــــــــــدار</Highlight>
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-06">
+          <Heading className="mt-16">
+            <Fragment>
+              بنــــك أهدافك
+              <br /> <Highlight>الصغــــــــــــــــار</Highlight>
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-07">
+          <Heading className="mt-16">
+            <Fragment>
+              على أرضنــــا
+              <br /> رح <Highlight>تمــــــــــــــــوت</Highlight>.
+            </Fragment>
+          </Heading>
+        </Post>
+        <Post id="design-04-08">
           <Heading>
             شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لغزة</Highlight>.
           </Heading>
