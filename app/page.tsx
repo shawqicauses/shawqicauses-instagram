@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣6️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣7️⃣
 
 import {Fragment} from "react"
 import {Badge, Footer, Heading, Highlight, Post} from "./_components/instagram"
@@ -118,7 +118,7 @@ const Page = async function Page() {
             <img
               src="/assets/rouhalmasjid/12.png"
               alt="Screen-shot"
-              className="absolute right-0 top-1/2 z-50 max-w-xl-5 -translate-y-1/2 translate-x-1/2 transform rounded-xl border-2 border-green-600 object-cover shadow-xl-2 shadow-green-950/25"
+              className="absolute right-0 top-1/2 z-50 max-w-xl-7 -translate-y-1/2 translate-x-1/2 transform rounded-xl border-2 border-green-600 object-cover shadow-xl-2 shadow-green-950/25"
             />
           }>
           <Footer
@@ -134,7 +134,7 @@ const Page = async function Page() {
             <img
               src="/assets/rouhalmasjid/12.png"
               alt="Screen-shot"
-              className="absolute left-0 top-1/2 z-50 max-w-xl-5 -translate-x-1/2 -translate-y-1/2 transform rounded-xl border-2 border-green-600 object-cover shadow-xl-2 shadow-green-950/25"
+              className="absolute left-0 top-1/2 z-50 max-w-xl-7 -translate-x-1/2 -translate-y-1/2 transform rounded-xl border-2 border-green-600 object-cover shadow-xl-2 shadow-green-950/25"
             />
           }>
           <Footer
