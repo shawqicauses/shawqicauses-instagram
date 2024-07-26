@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣5️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣6️⃣
 
 import {Fragment} from "react"
 import {Badge, Footer, Heading, Highlight, Post} from "./_components/instagram"
@@ -109,6 +109,38 @@ const Page = async function Page() {
             شكراً هذا كل <br /> شيء، لا تنسـ 🫵🏻ـوا <br /> الدعاء <Highlight>لتراث غزة</Highlight>.
           </Heading>
           <Footer isSwipe={false} className="mt-auto" />
+        </Post>
+        <Post
+          id="design-06"
+          color="green"
+          className="bg-gradient-to-br from-green-800 to-green-950"
+          img={
+            <img
+              src="/assets/rouhalmasjid/12.png"
+              alt="Screen-shot"
+              className="absolute right-0 top-1/2 z-50 max-w-xl-5 -translate-y-1/2 translate-x-1/2 transform rounded-xl border-2 border-green-600 object-cover shadow-xl-2 shadow-green-950/25"
+            />
+          }>
+          <Footer
+            isSwipe={false}
+            className="absolute bottom-16 left-1/2 w-max -translate-x-1/2 transform"
+          />
+        </Post>
+        <Post
+          id="design-06-02"
+          color="green"
+          className="bg-gradient-to-br from-green-800 to-green-950"
+          img={
+            <img
+              src="/assets/rouhalmasjid/12.png"
+              alt="Screen-shot"
+              className="absolute left-0 top-1/2 z-50 max-w-xl-5 -translate-x-1/2 -translate-y-1/2 transform rounded-xl border-2 border-green-600 object-cover shadow-xl-2 shadow-green-950/25"
+            />
+          }>
+          <Footer
+            isSwipe={false}
+            className="absolute bottom-16 left-1/2 w-max -translate-x-1/2 transform"
+          />
         </Post>
       </div>
     </main>
